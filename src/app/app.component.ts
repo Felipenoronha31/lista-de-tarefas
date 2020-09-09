@@ -8,7 +8,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
   styleUrls: [ './app.component.css' ]
 })
 export class AppComponent  {
-  public mode: 'list';
+  public mode: string = 'list';
   public todos: Todo[] = [];
   public title: String  = 'Minhas Tarefas';
   public form: FormGroup;
@@ -21,7 +21,6 @@ export class AppComponent  {
         Validators.required,
       ])]
    }); 
-
    this.load();
   }
 
@@ -68,5 +67,8 @@ clear() {
    } else {
      this.todos= [];
    }
+ }
+ changeMode(mode: string) {
+   this.mode = mode;
  }
 }

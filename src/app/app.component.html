@@ -16,7 +16,7 @@
 -->
 <div id="modal" *ngIf="mode=='add'">
   <H1 class="text-center">Nova Tarefa</H1>
-<form [formGroup]="form">
+  <form [formGroup]="form">
     <label>Tarefa</label>
     <input type="text" placeholder="Título da Tarefa" maxlength="60" formControlName="title"><br>
     <small class="danger"
@@ -24,14 +24,14 @@
     <p class="text-center">
     <button [disabled]="form.invalid" (click)="add()" class="button"> Salvar</button>
     </p>
-</form>
-<br><br>
+  </form>
+ <br><br>
 </div>
 
-<button class="add-button" (click)="changemode('add')" *ngIf="mode=='list'">
+<button class="add-button" (click)="changeMode('add')" *ngIf="mode=='list'">
   Nova Tarefa
 </button>
-<button class="add-button" (click)="changemode('list')" *ngIf="mode=='add'">
+<button class="add-button" (click)="changeMode('list')" *ngIf="mode=='add'">
   Nova Tarefa
 </button>
 
